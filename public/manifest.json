@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Zoom Extension",
+  "version": "1.2.0",
+  "description": "Zoom into YouTube videos with Ctrl + Scroll Wheel, including fullscreen mode!",
+  "icons":{
+    "64": "icon64.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["contentScript.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
